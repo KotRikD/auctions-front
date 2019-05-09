@@ -1,0 +1,36 @@
+.SmallCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 76px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: white;
+    border-radius: 30px;
+}
+
+.SmallCard__prize-image img {
+    width: 52px;
+    height: 52px;
+}
+
+.SmallCard__prize-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.SmallCard__prize-body--bold {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.SmallCard__prize-body--small {
+    font-weight: 700;
+    font-size: 15px;
+}
+

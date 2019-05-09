@@ -1,3 +1,22 @@
 .MainScreen {
     height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.MainScreen__p10 {
+    margin-bottom: 10px;
+}
+
+
+.MainScreen__footer {
+    background: linear-gradient(180deg, #43BEA4 0%, rgba(255, 114, 98, 0) 98.89%);
+    transform: rotate(180deg);
+    height: 53px;
+    z-index: 7;
+    position: fixed;
+    bottom: 53px;
+    right: 0;
+    left: 0;
 }
