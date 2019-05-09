@@ -1,33 +1,152 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-ExtraBoldItalic.ttf) format("truetype");
+    font-weight: 800;
+    font-style: italic
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-Italic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-MediumItalic.ttf) format("truetype");
+    font-weight: 500;
+    font-style: italic
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-Thin.ttf) format("truetype");
+    font-weight: 100;
+    font-style: normal
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-Light.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal
 }
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-LightItalic.ttf) format("truetype");
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-BlackItalic.ttf) format("truetype");
+    font-weight: 900;
+    font-style: italic
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-Black.ttf) format("truetype");
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-BoldItalic.ttf) format("truetype");
+    font-weight: 700;
+    font-style: italic
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-ThinItalic.ttf) format("truetype");
+    font-weight: 100;
+    font-style: italic
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-DemiBoldItalic.ttf) format("truetype");
+    font-weight: 600;
+    font-style: italic
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-ExtraLightItalic.ttf) format("truetype");
+    font-weight: 200;
+    font-style: italic
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-DemiBold.ttf) format("truetype");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-ExtraLight.ttf) format("truetype");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-ExtraBold.ttf) format("truetype");
+    font-weight: 800;
+    font-style: normal
+}
+
+@font-face {
+    font-family: TT Commons;
+    src: url(./Fonts/TTCommons-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    font-family: TT Commons,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+    font-weight: 400;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+body, html, div#root, div.App {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body {
+    background: #43BEA4;
+}
+
+
+

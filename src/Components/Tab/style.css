@@ -1,0 +1,14 @@
+.Tab {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Tab .Tab--icon svg, path {
+    fill: #8E8E92;
+}
+
+.Tab .Tab--icon--active svg, .Tab .Tab--icon--active path {
+    fill: #43BEA4;
+}

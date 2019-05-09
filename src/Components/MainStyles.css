@@ -1,0 +1,14 @@
+.Header {
+    width: 100%;
+    background: white;
+    position: relative;
+    padding-top: 29px;
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+.Header > span {
+    font-weight: 700;
+    font-size: 25px;
+    color: #43BEA4;
+}
