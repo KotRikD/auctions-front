@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import MainScreen from "../MainScreen";
+import SelectedAuction from "../SelectedAuction";
 
 export default class View extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ export default class View extends React.Component {
     render() {
         return (
             <div className="View">
-                <MainScreen/>
+                <SelectedAuction/>
             </div>
         )
     }

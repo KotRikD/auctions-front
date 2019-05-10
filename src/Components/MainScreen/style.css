@@ -5,11 +5,6 @@
     scroll-behavior: smooth;
 }
 
-.MainScreen__p10 {
-    margin-bottom: 10px;
-}
-
-
 .MainScreen__footer {
     background: linear-gradient(180deg, #43BEA4 0%, rgba(255, 114, 98, 0) 98.89%);
     transform: rotate(180deg);

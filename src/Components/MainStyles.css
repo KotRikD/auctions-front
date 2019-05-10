@@ -14,3 +14,18 @@
     font-size: 25px;
     color: #43BEA4;
 }
+
+.Header__icon {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+
+.Header__icon svg, .Header__icon path {
+    fill: #43BEA4;
+}
+
+.App_p10 {
+    margin-bottom: 10px;
+}

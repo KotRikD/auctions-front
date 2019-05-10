@@ -8,8 +8,8 @@ export default class MainScreen extends React.Component {
     render() {
         return (
             <div className="MainScreen">
-                <div className="Header MainScreen__p10">
-                    <span>аукционы.</span>
+                <div className="Header App__p10">
+                    <span>auctions.</span>
                 </div>
                 <AuctionSection name="активные аукционы"/>
                 <AuctionSection name="активные аукционы"/>

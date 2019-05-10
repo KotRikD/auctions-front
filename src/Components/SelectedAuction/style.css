@@ -1,0 +1,189 @@
+.SelectedAuction {
+
+}
+
+
+.SelectedAuction--main {
+    margin: 1rem;
+    background: white;
+    border-radius: 30px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.SelectedAuction--main--header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.SelectedAuction--main--header--left {
+    width: 135px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.SelectedAuction--main--header--left > img {
+    width: 135px;
+    height: 135px;
+    margin-bottom: 5px;
+}
+
+.SelectedAuction--main--header--left--info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.SelectedAuction--main--header--left--info--timer {
+    font-size: 35px;
+    font-weight: 600;
+}
+.SelectedAuction--main--header--left--info--small {
+    margin-top: -10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.SelectedAuction--main--header--right {
+    width: 26vh;
+}
+
+.SelectedAuction--main--header--right--header {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.SelectedAuction--main--header--right--body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.SelectedAuction--main--header--right--body--left {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.SelectedAuction--main--header--right--body--right {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.SelectedAuction--main--header--right--body--right span {
+    opacity: 1;
+    vertical-align: -4px;
+}
+
+.SelectedAuction--main--header--right--btn {
+    float: right;
+
+    background: #4a76a8;
+    border-radius: 30px;
+    padding-top: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 7px;
+
+}
+
+.SelectedAuction--main--header--right--btn > span {
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+}
+
+.SelectedAuction--main--body {
+    position: relative;
+    margin-top: 10px;
+}
+
+.SelectedAuction--main--body--header {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.SelectedAuction--main--body--bets--user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.SelectedAuction--main--body, .SelectionAuction--main--body--bets {
+    width: 100%;
+}
+
+.SelectedAuction--main--body--bets--user--avatar {
+    border-radius: 30px;
+    width: 58px;
+    height: 58px;
+    margin-right: 9px;
+}
+
+.SelectedAuction--main--body--bets--user--info {
+}
+
+.SelectedAuction--main--body--bets--user--info--header {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.SelectedAuction--main--body--bets--user--info--second {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.SelectedAuction--main--body--bets--user--info--second--small {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.SelectedAuction--main--body--bets--user--info--second--small span.App__coin {
+    vertical-align: -3px;
+    margin-left: 3px;
+    opacity: 1;
+}
+
+.SelectedAuction--main--body--bets--user--info--footer {
+    opacity: 0.51;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.SelectedAuction--btn {
+    margin: 1rem;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 10px;
+    background: white;
+}
+
+.SelectedAuction--btn--text {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.SelectedAuction--btn--text span {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+}
