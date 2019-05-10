@@ -3,6 +3,8 @@ import './style.css';
 import '../MainStyles.css';
 import Bk from '../../Images/bk.png';
 import Back from "../../Icons/Back";
+import AppDispatcher, {TAB_CHANGED} from "../../Dispatcher";
+import ModalDialog from "@happysanta/vk-app-ui/src/components/ModalDialog/ModalDialog";
 
 export default class SelectedAuction extends React.Component {
 
@@ -10,16 +12,27 @@ export default class SelectedAuction extends React.Component {
         super(props);
 
         this.state = {
-            lot: null
+            lot: null,
+
+            popups: {
+                popupNewBet: false,
+                popupBuy: false
+            }
         }
     }
 
+    returnBack() {
+        AppDispatcher.dispatch({
+            type: TAB_CHANGED,
+            tab: 'home'
+        })
+    }
 
     render() {
         return (
             <div className="SelectedAuction">
                 <div className="Header App__p10">
-                    <span className="Header__icon"><Back/></span>
+                    <span className="Header__icon" onClick={this.returnBack}><Back/></span>
                     <span>auctions.</span>
                 </div>
                 <div className="SelectedAuction--main">
@@ -68,13 +81,16 @@ export default class SelectedAuction extends React.Component {
 
                         <div className="SelectionAuction--main--body--bets">
                             <div className="SelectedAuction--main--body--bets--user">
-                                <img className="SelectedAuction--main--body--bets--user--avatar" src="https://sun1-25.userapi.com/c846124/v846124342/1fd5d9/eOVYWBIXma8.jpg?ava=1"/>
+                                <img className="SelectedAuction--main--body--bets--user--avatar"
+                                     src="https://sun1-25.userapi.com/c846124/v846124342/1fd5d9/eOVYWBIXma8.jpg?ava=1"/>
                                 <div className="SelectedAuction--main--body--bets--user--info">
                                     <p className="SelectedAuction--main--body--bets--user--info--header">
                                         Баран Баранович
                                     </p>
                                     <p className="SelectedAuction--main--body--bets--user--info--second">
-                                        поставил <span className="SelectedAuction--main--body--bets--user--info--second--small">5 000 000<span className="App__coin"/></span>
+                                        поставил <span
+                                        className="SelectedAuction--main--body--bets--user--info--second--small">5 000 000<span
+                                        className="App__coin"/></span>
                                     </p>
                                     <p className="SelectedAuction--main--body--bets--user--info--footer">
                                         10 секунд назад
@@ -83,13 +99,16 @@ export default class SelectedAuction extends React.Component {
                             </div>
 
                             <div className="SelectedAuction--main--body--bets--user">
-                                <img className="SelectedAuction--main--body--bets--user--avatar" src="https://sun1-25.userapi.com/c846124/v846124342/1fd5d9/eOVYWBIXma8.jpg?ava=1"/>
+                                <img className="SelectedAuction--main--body--bets--user--avatar"
+                                     src="https://sun1-25.userapi.com/c846124/v846124342/1fd5d9/eOVYWBIXma8.jpg?ava=1"/>
                                 <div className="SelectedAuction--main--body--bets--user--info">
                                     <p className="SelectedAuction--main--body--bets--user--info--header">
                                         Баран Баранович
                                     </p>
                                     <p className="SelectedAuction--main--body--bets--user--info--second">
-                                        поставил <span className="SelectedAuction--main--body--bets--user--info--second--small">5 000 000<span className="App__coin"/></span>
+                                        поставил <span
+                                        className="SelectedAuction--main--body--bets--user--info--second--small">5 000 000<span
+                                        className="App__coin"/></span>
                                     </p>
                                     <p className="SelectedAuction--main--body--bets--user--info--footer">
                                         10 секунд назад
@@ -104,9 +123,20 @@ export default class SelectedAuction extends React.Component {
                 <div className="SelectedAuction--btn">
                     <p className="SelectedAuction--btn--text"><span className="App__coin"/> Сделать ставку</p>
                 </div>
+
+                {this.state.popups.popupBuy ?
+                    <ModalDialog onClose={() => this.setState({popups: {popupBuy: false}})} onConfirm={() => this.setState({popups: {popupBuy: false}})} header="Настройки">
+                        <h1>Desktop button</h1>
+                        <br/>
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/><br/>
+                        Some text
+                    </ModalDialog> : null}
+
             </div>
         )
     }
+
 
 
 }

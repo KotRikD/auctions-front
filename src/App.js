@@ -6,6 +6,7 @@ import Tab from "./Components/Tab";
 import Bet from "./Icons/Bet";
 
 import './App.css';
+import Cup from "./Icons/Cup";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <View/>
         <TabLayout>
           <Tab icon={<Bet/>} id="home"/>
-          <Tab icon={<Bet/>} id="bet"/>
+          <Tab icon={<Cup/>} id="bet"/>
         </TabLayout>
       </div>
   );

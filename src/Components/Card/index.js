@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Bk from '../../Images/bk.png';
+import AppDispatcher, {TAB_CHANGED} from "../../Dispatcher";
 
 export default class Card extends React.Component {
     constructor(props) {
@@ -14,10 +15,16 @@ export default class Card extends React.Component {
         }
     }
 
+    onClicked() {
+        AppDispatcher.dispatch({
+            type: TAB_CHANGED,
+            tab: "selected"
+        })
+    }
 
     render() {
         return(
-            <div className="Card">
+            <div className="Card" onClick={this.onClicked}>
                 <div className="Card--left">
                     <img className="Card--left--image" src={Bk}/>
                     <div className="Card--left--text">
