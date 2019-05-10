@@ -5,9 +5,10 @@ let AuthStore = merge(EventEmitter.prototype, {
 
     AuthData: null,
     Error: null,
-    UserProfile: null,
+    StartData: null,
     VKProfile: null,
     VKToken: null,
+    LongPoll: null,
 
     emitChange: function () {
         this.emit('change');

@@ -4,10 +4,19 @@ import merge from 'merge';
 let AppStore = merge(EventEmitter.prototype, {
 
     SelectedAuction: null,
+    Lots: {
+        'onGoing': [],
+        'soonGoing': []
+    },
 
     setNullSA: function () {
         this.SelectedAuction = null;
         AppStore.emitChange()
+    },
+
+    setNullLots: function () {
+        this.Lots = null;
+        AppStore.emitChange();
     },
 
     emitChange: function () {

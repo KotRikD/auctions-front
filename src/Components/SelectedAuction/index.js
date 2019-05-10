@@ -1,18 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './style.css';
 import '../MainStyles.css';
 import Bk from '../../Images/bk.png';
 import Back from "../../Icons/Back";
-import AppDispatcher, {TAB_CHANGED} from "../../Dispatcher";
-import ModalDialog from "@happysanta/vk-app-ui/src/components/ModalDialog/ModalDialog";
+import AppDispatcher, {LOTNULL_SELECTED, TAB_CHANGED} from "../../Dispatcher";
+import '@happysanta/vk-app-ui/dist/vkappui.css';
+import PopUp from "../PopUp";
+import AppStore from "../../Stores/AppStore";
+import {formatCoinNumber} from "../../Helpers";
+import Img from 'react-image';
 
-export default class SelectedAuction extends React.Component {
+export default class SelectedAuction extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            lot: null,
+            lot: AppStore.SelectedAuction,
 
             popups: {
                 popupNewBet: false,
@@ -22,6 +26,9 @@ export default class SelectedAuction extends React.Component {
     }
 
     returnBack() {
+        AppDispatcher.dispatch({
+            type: LOTNULL_SELECTED
+        });
         AppDispatcher.dispatch({
             type: TAB_CHANGED,
             tab: 'home'
@@ -38,10 +45,10 @@ export default class SelectedAuction extends React.Component {
                 <div className="SelectedAuction--main">
                     <div className="SelectedAuction--main--header">
                         <div className="SelectedAuction--main--header--left">
-                            <img src={Bk}/>
+                            <Img src={[this.state.lot.prize.image, "https://vk.com/sticker/1-12374-128"]}/>
                             <div className="SelectedAuction--main--header--left--info">
                                 <div className="SelectedAuction--main--header--left--info--timer">
-                                    05:59
+                                    {this.state.lot.end_time}
                                 </div>
                                 <div className="SelectedAuction--main--header--left--info--small">
                                     осталось
@@ -49,13 +56,13 @@ export default class SelectedAuction extends React.Component {
                             </div>
                         </div>
                         <div className="SelectedAuction--main--header--right">
-                            <p className="SelectedAuction--main--header--right--header">Рожок</p>
+                            <p className="SelectedAuction--main--header--right--header">{this.state.lot.prize.name}</p>
                             <div className="SelectedAuction--main--header--right--body App--opacitied">
                                 <p className="SelectedAuction--main--header--right--body--left">
                                     шаг ставки
                                 </p>
                                 <p className="SelectedAuction--main--header--right--body--right">
-                                    500 000 <span className="App__coin"/>
+                                    {formatCoinNumber(this.state.lot.bet.step)} <span className="App__coin"/>
                                 </p>
                             </div>
 
@@ -64,7 +71,7 @@ export default class SelectedAuction extends React.Component {
                                     текущая цена
                                 </p>
                                 <p className="SelectedAuction--main--header--right--body--right">
-                                    6 500 000 <span className="App__coin"/>
+                                    {formatCoinNumber(this.state.lot.buyout.sum)} <span className="App__coin"/>
                                 </p>
                             </div>
 
@@ -124,19 +131,23 @@ export default class SelectedAuction extends React.Component {
                     <p className="SelectedAuction--btn--text"><span className="App__coin"/> Сделать ставку</p>
                 </div>
 
-                {this.state.popups.popupBuy ?
-                    <ModalDialog onClose={() => this.setState({popups: {popupBuy: false}})} onConfirm={() => this.setState({popups: {popupBuy: false}})} header="Настройки">
-                        <h1>Desktop button</h1>
-                        <br/>
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                        <br/><br/><br/><br/><br/><br/><br/>
-                        Some text
-                    </ModalDialog> : null}
+
+
+                {(this.state.popups.popupBuy) ?
+                    <PopUp onClose={()=>{console.log("closed")}} onConfirm={()=> {
+                        this.setState({
+                            popups: {
+                                popupBuy: false
+                            }
+                        })
+                    }} color="black" btnName="Выкупить лот прямо сейчас">
+                        Hello!
+                    </PopUp>
+                    : null}
 
             </div>
         )
     }
-
 
 
 }

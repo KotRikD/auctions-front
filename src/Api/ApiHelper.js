@@ -12,10 +12,20 @@ export default class ApiHelper {
         });
     }
 
-    static getStartData() {
+    static getStartData(authToken = undefined) {
+        let token = null;
+        if(authToken !== undefined) {
+            token = authToken
+        } else {
+            if(AuthStore.AuthData.access_token === null) {
+                return false;
+            } else {
+                token = AuthStore.AuthData.access_token
+            }
+        }
         return api.get('app.getStartData', {
             params: {
-                'access_token': AuthStore.AuthData.sign
+                'access_token': token
             }
         });
     }
@@ -51,15 +61,6 @@ export default class ApiHelper {
               }
           });
       } */
-
-    static postStory(upload_url) {
-        let bodyData = new FormData();
-        bodyData.set('access_token', AuthStore.AuthData.sign);
-        bodyData.set('data', upload_url);
-        return api.post('stories.create', bodyData, {
-            headers: {'Content-Type': 'multipart/form-data' }
-        })
-    }
 
     static appTrack(hash, message) {
         let to = AuthStore.AuthData.sign;

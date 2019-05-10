@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import Card from "../Card";
 import SmallCard from "../SmallCard";
+import {GOING} from "../../Helpers";
 
 export default class AuctionSection extends React.Component {
     constructor(props) {
@@ -13,10 +14,22 @@ export default class AuctionSection extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        this.setState({
+            name: nextProps.name,
+            items: nextProps.items
+        })
+    }
+
     renderItems() {
         return (
             this.state.items.map((el, index)=> {
-                return (<div key={index}>Test</div>)
+                return (
+                    el.status === GOING ?
+                        <Card prize={el.prize.image} timeEnd={el.end_time} name={el.prize.name} lastBet="хуй вовы в очке" id={el.id} key={index} />
+                        :
+                        <SmallCard image={el.prize.image} timeStart={el.start_time} name={el.prize.name} key={index} />
+                )
             })
         )
     }
@@ -30,8 +43,7 @@ export default class AuctionSection extends React.Component {
                     </div>
                 </div>
                 <div className="AuctionSection--container">
-                    <Card/>
-                    <SmallCard/>
+                    {this.renderItems()}
                 </div>
             </div>
         )

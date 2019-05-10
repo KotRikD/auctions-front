@@ -1,6 +1,7 @@
 import React from 'react';
 import Bk from '../../Images/bk.png';
 import './style.css';
+import Img from 'react-image';
 
 export default class SmallCard extends React.Component {
     constructor(props) {
@@ -8,21 +9,22 @@ export default class SmallCard extends React.Component {
 
         this.state = {
             image: props.image,
-            timeStart: props.timeEnd,
+            timeStart: props.timeStart,
             name: props.name
         }
     }
 
 
     render() {
+        console.log(this.state);
         return (
             <div className="SmallCard">
                 <div className="SmallCard__prize-image">
-                    <img src={Bk}/>
+                    <Img src={[this.state.image, 'https://vk.com/sticker/1-12374-128']}/>
                 </div>
                 <div className="SmallCard__prize-body">
-                    <p className="SmallCard__prize-body--bold">Чизбургер от Burger King</p>
-                    <p className="SmallCard__prize-body--bold">03:01 <span className="SmallCard__prize-body--smal">до начала!</span></p>
+                    <p className="SmallCard__prize-body--bold">{this.state.name}</p>
+                    <p className="SmallCard__prize-body--bold">{this.state.timeStart} <span className="SmallCard__prize-body--smal">до начала!</span></p>
                 </div>
             </div>
         )
