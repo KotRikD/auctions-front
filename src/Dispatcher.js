@@ -18,9 +18,7 @@ export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
 export const LOT_UPDATE = "LOT_UPDATE";
 export const WIN_LOT = "WIN_LOT";
 export const UPDATE_DATA = "UPDATE_DATA";
-export const UPDATE_WINS_DATA = "UPDATE_WINS_DATA";
 export const CLEAR_WINLOT = "CLEAR_WINLOT";
-
 
 const AppDispatcher = new Dispatcher();
 
@@ -125,21 +123,6 @@ AppDispatcher.register(async (payload)=> {
                 AppStore.Lots = await sortLots(result.data.response.lots);
 
                 AppStore.emitChange();
-                AuthStore.emitChange();
-            } catch (e) {
-                AuthStore.Error = e;
-                AuthStore.emitChange();
-            }
-            break;
-        case UPDATE_WINS_DATA:
-            try {
-                let result = await ApiHelper.getWinHistory();
-                if (!result.data.response) {
-                    AuthStore.Error = result.data.error;
-                    AuthStore.emitChange();
-                }
-
-                AuthStore.StartData.win_history = result.data.response;
                 AuthStore.emitChange();
             } catch (e) {
                 AuthStore.Error = e;

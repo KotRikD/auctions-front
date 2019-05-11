@@ -1,11 +1,10 @@
 import AppDispatcher, {LOT_UPDATE, NEW_LOT, SHOW_MESSAGE, UPDATE_DATA, UPDATE_WINS_DATA, WIN_LOT} from "../Dispatcher";
 
 export const LP_DIALOG_MESSAGE = 1;
-export const LP_LOT_NEW = 2;
-export const LP_LOT_UPDATE = 3;
-export const LP_WIN_NEW = 4;
-export const LP_RELOAD = 5;
-export const LP_WINS_RELOAD = 6;
+export const LP_WIN_NEW = 2;
+export const LP_LOT_NEW = 3;
+export const LP_LOT_UPDATE = 4;
+export const LP_GLOBAL_RELOAD = 5;
 
 export default async function lpCallback(data) {
     if (!data.response.events || data.response.events === undefined) return;
@@ -45,15 +44,10 @@ export default async function lpCallback(data) {
                     lot: ev[1]
                 });
                 break;
-            case LP_RELOAD:
+            case LP_GLOBAL_RELOAD:
                 AppDispatcher.dispatch({
                     type: UPDATE_DATA
                 });
-                break;
-            case LP_WINS_RELOAD:
-                AppDispatcher.dispatch({
-                    type: UPDATE_WINS_DATA
-                })
                 break;
             default:
                 console.log("Неизвестное событие: "+ev[0]);

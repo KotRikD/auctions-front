@@ -1,0 +1,42 @@
+.ErrorScreen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20vh;
+}
+
+.ErrorScreen--center {
+    color: white;
+    font-weight: 700;
+    font-size: 60px;
+    text-align: center;
+}
+
+.ErrorScreen--second {
+    color: white;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 190px;
+}
+
+.ErrorScreen--btn {
+    margin: 1rem;
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 15px;
+    background: white;
+}
+
+.ErrorScreen--btn span {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+}
