@@ -1,4 +1,5 @@
 import api from '../Api';
+import AppDispatcher, {ERROR_SUBMITTED} from "../Dispatcher";
 
 export default class LongPoll {
     constructor (ts, time, hash, sign, access_token, callback) {
@@ -28,11 +29,20 @@ export default class LongPoll {
                 });
 
                 if (!result.data.response) {
+                    AppDispatcher.dispatch({
+                        type: ERROR_SUBMITTED,
+                        error: result.data.error
+                    });
                     throw Error("Not connected");
                 }
                 await this.callback(result.data);
+                this.ts = result.data.response.ts
             } catch(e) {
                 if(this.error_times>2) {
+                    AppDispatcher.dispatch({
+                        type: ERROR_SUBMITTED,
+                        error: e
+                    });
                     this.enabled = false;
                     window.location.reload(true);
                     break;

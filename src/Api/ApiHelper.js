@@ -38,59 +38,12 @@ export default class ApiHelper {
         })
     }
 
-    /*  static getLastGame() {
-          return api.get('app.getLastGame', {
-              params: {
-                  'access_token': AuthStore.userToken.sign
-              }
-          });
-      }
-
-      static getMe() {
-          return api.get('app.getMe', {
-              params: {
-                  'access_token': AuthStore.userToken.sign
-              }
-          });
-      }
-
-      static getCurrentGame() {
-          return api.get('app.getCurrentGame', {
-              params: {
-                  'access_token': AuthStore.userToken.sign
-              }
-          });
-      } */
-
-    static appTrack(hash, message) {
-        let to = AuthStore.AuthData.sign;
-        if (to === null) {
-            to = "";
-        }
-        let bodyData = new FormData();
-        bodyData.set('hash', hash);
-        bodyData.set('message', btoa(message));
-        bodyData.set('access_token', to);
-        return api.post('app.track', bodyData, {
-            headers: {'Content-Type': 'multipart/form-data' }
-        })
-    }
-
-    static selectRoom(type) {
-        return api.get('rooms.select', {
-            params: {
-                'type': type,
-                'access_token': AuthStore.AuthData.sign
-            }
-        })
-    }
-
-    static getPayment() {
-        return api.get('payment.get', {
+    static getWinHistory() {
+        return api.get('app.getWinHistory', {
             params: {
                 'access_token': AuthStore.AuthData.sign
             }
-        });
+        })
     }
 
 }

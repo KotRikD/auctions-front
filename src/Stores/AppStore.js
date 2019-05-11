@@ -8,10 +8,17 @@ let AppStore = merge(EventEmitter.prototype, {
         'onGoing': [],
         'soonGoing': []
     },
+    showMessage: null,
+    winLot: null,
 
     setNullSA: function () {
         this.SelectedAuction = null;
         AppStore.emitChange()
+    },
+
+    setNullMessage: function() {
+        this.showMessage = null;
+        AppStore.emitChange();
     },
 
     setNullLots: function () {

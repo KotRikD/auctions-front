@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';
 import '../MainStyles.css';
 import AuctionSection from "../Section";
-import {GOING, SOON} from "../../Helpers";
 import AppStore from "../../Stores/AppStore";
 
 export default class MainScreen extends React.Component {

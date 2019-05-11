@@ -2,3 +2,55 @@
     width: 100%;
     height: 92vh;
 }
+
+.View__message {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.View__winlot {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.View__winlot--header {
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 600;
+    color: #247B7B;
+}
+
+.View__winlot--image {
+    margin-top: 10px;
+    width: 135px;
+    height: 135px;
+    margin-bottom: 10px;
+}
+
+.View__winlot--bold-one {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.View__winlot--green-win {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 600;
+    color: #247B7B;
+}
+
+.View__winlot--bold-two {
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+}
+
+.View__winlot--bold-two span.App__coin {
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+    vertical-align: -3px;
+}

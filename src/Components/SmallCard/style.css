@@ -25,13 +25,14 @@
     justify-content: space-between;
 }
 
-.SmallCard__prize-body--bold {
+.SmallCard__prize-body--bold, .SmallCard__prize-body--bold > span:first-of-type {
     font-weight: 700;
     font-size: 20px;
 }
 
 .SmallCard__prize-body--small {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 15px;
+    vertical-align: 2px;
 }
 

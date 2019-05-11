@@ -18,7 +18,7 @@
     text-align: center;
 }
 
-.Card--left--text--timer {
+.Card--left--text--timer > span {
     font-weight: 700!important;
     font-size: 24px;
 }

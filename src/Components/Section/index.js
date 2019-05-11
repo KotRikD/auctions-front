@@ -26,7 +26,7 @@ export default class AuctionSection extends React.Component {
             this.state.items.map((el, index)=> {
                 return (
                     el.status === GOING ?
-                        <Card prize={el.prize.image} timeEnd={el.end_time} name={el.prize.name} lastBet="хуй вовы в очке" id={el.id} key={index} />
+                        <Card prize={el.prize.image} timeEnd={el.end_time} name={el.prize.name} last_user={el.last_bets[0]} lastBet="хуй вовы в очке" id={el.id} key={index} />
                         :
                         <SmallCard image={el.prize.image} timeStart={el.start_time} name={el.prize.name} key={index} />
                 )

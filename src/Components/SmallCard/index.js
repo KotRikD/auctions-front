@@ -1,7 +1,8 @@
 import React from 'react';
-import Bk from '../../Images/bk.png';
 import './style.css';
 import Img from 'react-image';
+import {countdownRenderer} from "../../Helpers";
+import Countdown from "react-countdown-now";
 
 export default class SmallCard extends React.Component {
     constructor(props) {
@@ -24,7 +25,11 @@ export default class SmallCard extends React.Component {
                 </div>
                 <div className="SmallCard__prize-body">
                     <p className="SmallCard__prize-body--bold">{this.state.name}</p>
-                    <p className="SmallCard__prize-body--bold">{this.state.timeStart} <span className="SmallCard__prize-body--smal">до начала!</span></p>
+                    <p className="SmallCard__prize-body--bold">
+                        <Countdown
+                            date={new Date(this.state.timeStart*1000)}
+                            renderer={countdownRenderer}
+                        /> <span className="SmallCard__prize-body--small">до начала!</span></p>
                 </div>
             </div>
         )

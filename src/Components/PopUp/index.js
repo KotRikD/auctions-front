@@ -24,7 +24,9 @@ export default class PopUp extends React.Component {
                 <div className="Popup__container">
                     <span className="Popup__close" onClick={this.state.onClose}><Close/></span>
                     {this.props.children}
-                    <div className="Popup__btn" onClick={this.state.onConfirm}>
+                    <div className="Popup__btn" onClick={this.state.onConfirm} style={{
+                        background: this.state.color
+                    }}>
                         <span>{this.state.btnName}</span>
                     </div>
                 </div>
