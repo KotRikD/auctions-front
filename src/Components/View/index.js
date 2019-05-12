@@ -5,7 +5,7 @@ import SelectedAuction from "../SelectedAuction";
 import WinnedAuctions from "../WinnedAuctions";
 import TabStore from "../../Stores/TabStore";
 import PopUp from "../PopUp";
-import AppDispatcher, {CLEAR_MESSAGE, CLEAR_WINLOT} from "../../Dispatcher";
+import AppDispatcher, {CLEAR_MESSAGE, CLEAR_WINLOT, TAB_CHANGED} from "../../Dispatcher";
 import AppStore from "../../Stores/AppStore";
 import {formatCoinNumber} from "../../Helpers";
 import AuthStore from "../../Stores/AuthStore";
@@ -45,15 +45,29 @@ export default class View extends React.Component {
         })
     }
 
+    backHandling(e) {
+        e.preventDefault();
+        AppDispatcher.dispatch({
+            type: TAB_CHANGED,
+            tab: "home"
+        })
+    }
+
     componentWillMount() {
         AppStore.addChangeListener(this.updateMessage);
-        TabStore.addChangeListener(this.onNewTab)
+        TabStore.addChangeListener(this.onNewTab);
+        window.addEventListener("popstate", this.backHandling);
+        document.addEventListener("touchmove", function(event){
+            event.preventDefault();
+        });
     }
 
     componentWillUnmount() {
         AppStore.addChangeListener(this.updateMessage);
-        TabStore.removeChangeListener(this.onNewTab)
+        TabStore.removeChangeListener(this.onNewTab);
+        window.removeEventListener("popstate", this.backHandling);
     }
+
 
     resolveRoom(room) {
         switch(room) {

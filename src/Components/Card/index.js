@@ -57,19 +57,20 @@ export default class Card extends React.Component {
                 </div>
                 <div className="Card--right">
                     <p className="Card--right--header">{this.state.name}</p>
-                    <div className="Card--right--footer">
-                        <p className="Card--right--footer--one">последняя ставка:</p>
 
-                        {(this.state.last_user === undefined) ? <div className={"Card--right--foter--user--mini--text"}>Пока ставок не было</div> :
-                            <div className="Card--right--footer--user">
-                                <div className="Card--right--footer--user--mini">
-                                    <img className="Card--right--footer--user--mini--avatar" src={this.state.last_user.VKProfile.photo_200} alt="avatar"/>
-                                    <p className="Card--right--foter--user--mini--text">{this.state.last_user.VKProfile.first_name} {this.state.last_user.VKProfile.last_name[0]}.</p>
-                                </div>
-                                <div className="Card--right--footer--user--balance">{formatCoinNumber(this.state.last_user.amount)} <span className="App__coin"/></div>
+                    {(this.state.last_user === undefined) ? <div className="Card--right--footer"><div className={"Card--right--foter--user--mini--text"}>Пока ставок не было</div></div> :
+                        <div className="Card--right--footer">
+                        <p className="Card--right--footer--one">последняя ставка:</p>
+                        <div className="Card--right--footer--user">
+                            <div className="Card--right--footer--user--mini">
+                                <img className="Card--right--footer--user--mini--avatar" src={this.state.last_user.VKProfile.photo_200} alt="avatar"/>
+                                <p className="Card--right--foter--user--mini--text">{this.state.last_user.VKProfile.first_name} {this.state.last_user.VKProfile.last_name[0]}.</p>
                             </div>
-                        }
-                    </div>
+                            <div className="Card--right--footer--user--balance">{formatCoinNumber(this.state.last_user.amount)} <span className="App__coin"/></div>
+                        </div>
+                        </div>
+                    }
+
                 </div>
             </div>
         )

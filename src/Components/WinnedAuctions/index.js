@@ -73,9 +73,17 @@ export default class WinnedAuctions extends React.Component {
                 </div>
 
                 <div className="WinnedAuctions--body">
-                    <p className="WinnedAuctions--body--header">Выигранные лоты</p>
+                    {this.state.winnedAuctions.length <1 ?
+                        <div className="WinnedAuctions--body--null">
+                            <p>Вы пока что не выиграли ни одного аукциона. Самое время сделать это!</p>
+                        </div>
+                        :
+                        <div>
+                        <p className="WinnedAuctions--body--header">Выигранные лоты</p>
+                        {this.renderWinnedItems()}
+                        </div>
+                    }
 
-                    {this.renderWinnedItems()}
                 </div>
 
                 <div className="WinnedAuctions__footer"/>

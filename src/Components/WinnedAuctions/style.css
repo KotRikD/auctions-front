@@ -5,13 +5,29 @@
 }
 
 .WinnedAuctions--body {
+    height: 100%;
     margin-top: 20px;
     padding-left: 13px;
     padding-right: 13px;
 }
 .WinnedAuctions--body--header {
+    text-align: center;
     font-weight: 500;
     font-size: 20px;
+    color: white;
+}
+
+.WinnedAuctions--body--null {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 78vh;
+}
+
+.WinnedAuctions--body--null p {
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
     color: white;
 }
 
@@ -96,7 +112,7 @@
 }
 
 .WinnedAuctions__footer {
-    background: linear-gradient(180deg, #43BEA4 0%, rgba(255, 114, 98, 0) 98.89%);
+    background: linear-gradient(180deg, #43BEA4 0%, rgba(67, 190, 164, 0) 98.89%);
     transform: rotate(180deg);
     height: 53px;
     z-index: 7;

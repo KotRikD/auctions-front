@@ -23,7 +23,7 @@
 }
 
 .SelectedAuction--main--header--left {
-    width: 40%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -32,8 +32,8 @@
 }
 
 .SelectedAuction--main--header--left > img {
-    width: 125px;
-    height: 125px;
+    width: 120px;
+    height: 120px;
     margin-bottom: 5px;
     margin-right: 5px;
 }
@@ -58,7 +58,7 @@
 }
 
 .SelectedAuction--main--header--right {
-    width: 60%;
+    width: 100%;
 }
 
 .SelectedAuction--main--header--right--header {
@@ -69,6 +69,7 @@
 .SelectedAuction--main--header--right--body {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 7px;
@@ -80,7 +81,8 @@
 }
 
 .SelectedAuction--main--header--right--body--right {
-    font-size: 15px;
+    padding-left: 2px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -94,10 +96,10 @@
 
     background: #4a76a8;
     border-radius: 30px;
-    padding-top: 8px;
+    padding-top: 10px;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 7px;
+    padding-bottom: 6px;
 
 }
 

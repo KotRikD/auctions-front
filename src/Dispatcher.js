@@ -61,6 +61,8 @@ AppDispatcher.register(async (payload)=> {
 
             AppStore.SelectedAuction = selectedLot;
             AppStore.emitChange();
+
+            window.history.pushState(null, null, window.location.href);
             break;
         case ERROR_SUBMITTED:
             console.log(payload.error);

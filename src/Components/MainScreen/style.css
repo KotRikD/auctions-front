@@ -6,7 +6,7 @@
 }
 
 .MainScreen__footer {
-    background: linear-gradient(180deg, #43BEA4 0%, rgba(255, 114, 98, 0) 98.89%);
+    background: linear-gradient(180deg, #43BEA4 0%, rgba(67, 190, 164, 0) 98.89%);
     transform: rotate(180deg);
     height: 53px;
     z-index: 7;

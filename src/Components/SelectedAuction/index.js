@@ -137,9 +137,11 @@ export default class SelectedAuction extends Component {
                                 </p>
                             </div>
 
-                            <div className="SelectedAuction--main--header--right--btn" onClick={this.showBuyPopup}>
-                                <span>Выкупить!</span>
-                            </div>
+                            {this.state.lot.buyout.available === 1 ?
+                                <div className="SelectedAuction--main--header--right--btn" onClick={this.showBuyPopup}>
+                                    <span>Выкупить!</span>
+                                </div> : null
+                            }
 
                         </div>
                     </div>
