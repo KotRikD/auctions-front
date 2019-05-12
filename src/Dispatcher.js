@@ -88,7 +88,7 @@ AppDispatcher.register(async (payload)=> {
             }
 
             AuthStore.StartData.lots[slotInd] = payload.updated;
-            AppStore.Lots = await sortLots(payload.StartData.lots);
+            AppStore.Lots = await sortLots(AuthStore.StartData.lots);
 
             AuthStore.emitChange();
             AppStore.emitChange();

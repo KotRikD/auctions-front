@@ -161,7 +161,7 @@ export default class SelectedAuction extends Component {
                 {(this.state.popups.popupBuy) ?
                     <PopUp onClose={()=>{this.setState({popups: {popupBuy: false}})}} onConfirm={()=> {
                         //BUYING PROCESS
-                        openLinkIOS(buildBetLink(AuthStore.AuthData.data.transfers_receiver, this.state.lot.buyout.amount, this.state.lot.id, true));
+                        openLinkIOS(buildBetLink(AuthStore.AuthData.data.transfers_receiver, this.state.lot.buyout.amount, 2e9+this.state.lot.id, true));
 
                         this.setState({
                             popups: {
@@ -180,7 +180,7 @@ export default class SelectedAuction extends Component {
 
                 {(this.state.popups.popupNewBet) ?
                     <PopUp onClose={()=>{this.setState({popups: {popupNewBet: false}})}} onConfirm={()=> {
-                        openLinkIOS(buildBetLink(AuthStore.AuthData.data.transfers_receiver, this.state.lot.bet.step, 2e9+this.state.lot.id, false));
+                        openLinkIOS(buildBetLink(AuthStore.AuthData.data.transfers_receiver, this.state.lot.bet.next_sum, this.state.lot.id, false));
 
                         this.setState({
                             popups: {
@@ -191,7 +191,7 @@ export default class SelectedAuction extends Component {
                         <div className="SelectedAuction__PopUp">
                             <p className="SelectedAuction__PopUp--header">Если вашу ставку перебьют, мы вернем монетки после окончания аукциона.</p>
                             <p className="SelectedAuction__PopUp--center">
-                                {formatCoinNumber(this.state.lot.bet.step)} <span className="App__coin"/>
+                                {formatCoinNumber(this.state.lot.bet.next_sum)} <span className="App__coin"/>
                             </p>
                         </div>
                     </PopUp>

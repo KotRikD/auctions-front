@@ -2,6 +2,7 @@ import React from 'react';
 import VkSdk from "@happysanta/vk-apps-sdk";
 import AppDispatcher, {ERROR_SUBMITTED} from "./Dispatcher";
 import AuthStore from "./Stores/AuthStore";
+import {IOS, platform} from "@vkontakte/vkui";
 
 export const GOING = 1;
 export const SOON  = 0;
@@ -104,7 +105,10 @@ export function openLinkIOS(link) {
     const a = document.createElement('a')
     a.setAttribute('href', link);
     a.setAttribute("rel", "noopener noreferrer");
-    //const os = platform();
+    const os = platform();
+    if (os !== IOS) {
+        a.setAttribute("target", "_blank");
+    }
     a.dispatchEvent(new MouseEvent("click", {'view': window, 'bubbles': true, 'cancelable': true}))
 }
 
