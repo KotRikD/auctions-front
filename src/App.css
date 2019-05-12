@@ -160,6 +160,7 @@ body, html, div#root, div.App {
 
 body {
     background: #43BEA4;
+    position: fixed;
 }
 
 .App__coin {
