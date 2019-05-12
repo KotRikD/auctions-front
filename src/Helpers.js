@@ -8,7 +8,6 @@ export const GOING = 1;
 export const SOON  = 0;
 
 export async function sortLots(array) {
-    console.log(array);
     array = await addUsersToLots(array);
 
     let onGoing = [];

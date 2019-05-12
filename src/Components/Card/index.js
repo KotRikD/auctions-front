@@ -42,7 +42,6 @@ export default class Card extends React.Component {
     }
 
     render() {
-        console.log(this.state.last_user)
         return(
             <div className="Card" onClick={this.onClicked}>
                 <div className="Card--left">

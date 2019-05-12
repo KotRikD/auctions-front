@@ -92,7 +92,7 @@ export default class View extends React.Component {
                             <p className="View__winlot--green-win">{this.state.winLot.prize.name}</p>
                             <p className="View__winlot--bold-one">всего за</p>
                             <p className="View__winlot--bold-two">
-                                {formatCoinNumber(this.state.winLot.prize.amount)} <span className="App__coin"/>
+                                {formatCoinNumber(this.state.winLot.amount)} <span className="App__coin"/>
                             </p>
                         </div>
                     </PopUp>

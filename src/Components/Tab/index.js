@@ -17,7 +17,6 @@ export default class Tab extends React.Component {
     }
 
     changeTab() {
-        console.log("test");
         AppDispatcher.dispatch({
             type: TAB_CHANGED,
             tab: this.state.calledTab
@@ -25,7 +24,6 @@ export default class Tab extends React.Component {
     }
 
     isTab() {
-        console.log("updating");
         this.setState({
             currentTab: TabStore.Tab
         })

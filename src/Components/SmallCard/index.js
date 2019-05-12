@@ -17,7 +17,6 @@ export default class SmallCard extends React.Component {
 
 
     render() {
-        console.log(this.state);
         return (
             <div className="SmallCard">
                 <div className="SmallCard__prize-image">

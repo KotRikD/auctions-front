@@ -32,9 +32,10 @@
 }
 
 .SelectedAuction--main--header--left > img {
-    width: 135px;
-    height: 135px;
+    width: 125px;
+    height: 125px;
     margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 .SelectedAuction--main--header--left--info {

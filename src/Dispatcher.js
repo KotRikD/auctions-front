@@ -88,6 +88,9 @@ AppDispatcher.register(async (payload)=> {
             }
 
             AuthStore.StartData.lots[slotInd] = payload.updated;
+            if (AppStore.SelectedAuction && AppStore.SelectedAuction.id === AuthStore.StartData.lots[slotInd].id) {
+                AppStore.SelectedAuction = AuthStore.StartData.lots[slotInd]
+            }
             AppStore.Lots = await sortLots(AuthStore.StartData.lots);
 
             AuthStore.emitChange();
